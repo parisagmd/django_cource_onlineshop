@@ -8,6 +8,11 @@ services:
       - .:/code
     ports:
       - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - "DJANGO_SECRET_KEY=4%&6=6@20=n94+qurp7t&@#pnkzft)%t@&$$acoz@kk+wsk1+z+"
+      - "DJANGO_DEBUG=True"
 
   db:
     image: postgres:14
